@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function animate(ele,target){
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function(){
+            var speed = target>ele.offsetLeft? 10:-10;
+            var val = target-ele.offsetLeft;
+            ele.style.left = ele.offsetLeft+speed+"px";
+            if(Math.abs(val) < 10) {
+                ele.style.left = target+"px";
+                clearInterval(ele.timer);
+            }
+        },30);
+    }
+
+</script>
+</body>
+</html>
